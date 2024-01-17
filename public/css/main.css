@@ -3,3 +3,20 @@ body {
 	padding: 0 1rem;
 	font-family: sans-serif;
 }
+
+nav {
+	background-color: #aaa;
+	padding: .5rem;
+	display: flex;
+	gap: 1rem;
+}
+
+nav a {
+	text-decoration: none;
+	color: #333;
+}
+
+nav a.active {
+	color: brown;
+	font-weight: bold;
+}

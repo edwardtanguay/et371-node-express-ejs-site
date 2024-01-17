@@ -22,6 +22,11 @@ app.get('/books', async (req, res) => {
 	res.render('pages/books', {books: await model.getBooks()});
 });
 
+app.get('/book/:idCode', async (req, res) => {
+	const idCode = req.params.idCode;
+	res.render('pages/book', { bookIdCode: idCode });
+});
+
 app.get('/about', (req, res) => {
 	res.render('pages/about', {});
 });

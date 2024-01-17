@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(baseDir, '/src/views'));
 
 app.get('/', (req, res) => {
-	res.render('pages/welcome');
+	res.render('pages/welcome', {title: 'The Welcome Page'});
 });
 
 app.listen(config.getPort(), () => {

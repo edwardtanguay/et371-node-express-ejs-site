@@ -1,7 +1,7 @@
 import express from 'express';
+import * as config from './config';
 
 const app = express();
-const port = 4115;
 
 app.get('/', (req, res) => {
 	const siteTitle = 'The Info Site';
@@ -20,6 +20,6 @@ app.get('/', (req, res) => {
 })
 
 
-app.listen(port, () => {
-	console.log(`Listening at http://localhost:${port}`);
+app.listen(config.getPort(), () => {
+	console.log(`Listening at http://localhost:${config.getPort()}`);
 });

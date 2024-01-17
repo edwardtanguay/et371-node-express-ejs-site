@@ -1,6 +1,26 @@
-test of <b>EJS</b>
-<p><%=title%></p>
-<hr>
-more info
-<hr>
-There are <%=books.length%> books.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Site</title>
+</head>
+
+<body>
+    <h1>Info Site</h1>
+    <div>
+        <p>There are
+            <%= books.length %> books.
+        </p>
+        <ul>
+            <% books.forEach((book) => { %>
+            <li>
+                <%= book.title %>
+            </li>
+            <% }) %>
+        </ul>
+    </div>
+</body>
+
+</html>

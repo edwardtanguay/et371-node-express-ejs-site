@@ -1,24 +1,16 @@
 import express from 'express';
 import * as config from './config';
+import path from 'path';
 
 const app = express();
+const baseDir = process.cwd();
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(baseDir, '/src/views'));
 
 app.get('/', (req, res) => {
-	const siteTitle = 'The Info Site';
-	res.send(`
-<html>
-	<head>
-		<title>${siteTitle}</title>
-		<link href="css/main.css"/>
-	</head>
-	<body>
-		<h1>${siteTitle}</h1>
-		<p>Welcome to this site.</p>
-	</body>
-</html>
-	`);
-})
-
+	res.render('pages/welcome');
+});
 
 app.listen(config.getPort(), () => {
 	console.log(`Listening at http://localhost:${config.getPort()}`);
